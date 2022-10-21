@@ -1,6 +1,6 @@
 public class SearchInsertPosition {
 
-    static int searchInsert(int[] nums, int target) {
+    private int searchInsert(int[] nums, int target) {
         int low = 0, high = nums.length - 1;
 
         while (low <= high) {
@@ -18,9 +18,10 @@ public class SearchInsertPosition {
 
     public static void main(String[] args) {
 
+        SearchInsertPosition obj = new SearchInsertPosition();
         int[] numberList = {1, 3, 5, 6};
         int target = 2;
-        int index = searchInsert(numberList, target);
+        int index = obj.searchInsert(numberList, target);
         System.out.println(index);
     }
 }
