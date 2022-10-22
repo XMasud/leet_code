@@ -8,6 +8,7 @@ public class ContainsDuplicateII {
         HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
         for (int i = 0; i < nums.length; i ++){
             if (map.containsKey(nums[i]) && Math.abs(i - map.get(nums[i]))<= k){
+                System.out.println(map.get(nums[i]));
                 return true;
             }else {
                 map.put(nums[i], i);
