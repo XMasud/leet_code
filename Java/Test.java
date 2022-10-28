@@ -17,6 +17,6 @@ public class Test {
 
         }
 
-        System.out.println(map);
+        System.out.println(0+5/2);
     }
 }
