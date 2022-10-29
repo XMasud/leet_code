@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-
 public class ValidAnagram {
 
     public static boolean isAnagram(String s, String t) {
