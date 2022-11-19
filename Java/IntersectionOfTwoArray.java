@@ -1,7 +1,4 @@
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
-
 public class IntersectionOfTwoArray {
 
     public static int[] intersect(int[] nums1, int[] nums2){
