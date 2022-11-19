@@ -1,34 +1,27 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class IntersectionOfTwoArray {
 
     public static int[] intersect(int[] nums1, int[] nums2){
 
-        if(nums1.length < nums2.length)
-            return intersect(nums2, nums1);
+        int i = 0, j = 0, k = 0;
+        Arrays.sort(nums1);
+        Arrays.sort(nums2);
 
-        ArrayList<Integer> numArr1 = new ArrayList<>();
-        ArrayList<Integer> numArr2 = new ArrayList<>();
-
-
-        for(int i=0; i<nums1.length; i++){
-            numArr1.add(nums1[i]);
-        }
-
-        for (int i=0; i<nums2.length; i++){
-            if(numArr1.contains(nums2[i])){
-                numArr2.add(nums2[i]);
+        while (i< nums1.length && j < nums1.length){
+            if(nums1[i] > nums2[j]){
+                j++;
+            } else if (nums1[i]< nums2[j]) {
+                i++;
+            }else {
+                nums1[k++] = nums1[i];
+                j++;
+                i++;
             }
         }
-
-        int[] result = new int[numArr2.size()];
-
-        for (int i=0; i<numArr2.size(); i++){
-            result[i] = numArr2.get(i);
-        }
-
-        return result;
+        return Arrays.copyOfRange(nums1, 0, k);
     }
 
     public static void main(String[] args) {
