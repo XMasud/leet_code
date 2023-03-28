@@ -15,8 +15,7 @@ public class SearchInsertPosition35 {
             }
         }
 
-        return low;
-    }
+        return low;}
 
     public static void main(String[] args) {
         int target = 2;
