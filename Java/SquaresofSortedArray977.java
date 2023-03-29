@@ -22,8 +22,8 @@ public class SquaresofSortedArray977 {
         for(int i =0; i< nums.length; i++){
             nums[i] = nums[i] * nums[i];
         }
-
-        return sortArray(nums);
+        Arrays.sort(nums);
+        return nums;
     }
 
     public static void main(String[] args) {
