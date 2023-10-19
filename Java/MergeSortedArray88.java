@@ -5,16 +5,21 @@ public class MergeSortedArray88 {
     public static void merge(int[] nums1, int[] nums2, int m, int n) {
 
         if ((nums1.length == 0) || (nums1.length == nums2.length))
-            nums1 = nums2;
-
-        if ((nums1.length > 0) && (nums2.length > 0)) {
-            for (int i = 0; i < nums1.length; i++) {
-                if (i + 1 > m) {
-                    nums1[i] = nums2[i - n];
-                }
+            for(int i=0;i< nums1.length;i++){
+                nums1[i] = nums2[i];
             }
-            Arrays.sort(nums1);
+
+        int j=0;
+
+        for(int i=0;i< nums1.length;i++){
+
+            if(nums1[i]==0 && j < nums2.length){
+                nums1[i] = nums2[j];
+                j++;
+            }
         }
+
+        Arrays.sort(nums1);
     }
 
     public static void main(String[] args) {
