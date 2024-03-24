@@ -5,14 +5,12 @@ public class SellStock121 {
         int maxProfit = 0;
         int left = 0, right = 1;
 
-        System.out.println(prices.length);
         while (right < prices.length) {
             if (prices[left] < prices[right]) {
-                System.out.println(prices[right] +" - "+ prices[left]);
                 int profit = prices[right] - prices[left];
                 maxProfit = Math.max(maxProfit, profit);
             } else {
-                left = left + 1;
+                left = right;
             }
             right += 1;
         }
