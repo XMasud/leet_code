@@ -1,0 +1,7 @@
+# Ignore IDE-specific files
+.idea/
+.out/
+
+
+.Java/.idea/
+.Java/.out/
