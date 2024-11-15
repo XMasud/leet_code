@@ -1,24 +1,21 @@
 public class HouseRobber198 {
 
     public static int rob(int[] nums) {
-        int rob = 0,i = 1;
+        int evenBlockRob = 0,oddBlockRob = 0, i =0;
 
         while(i< nums.length){
-
-            if(nums[i] > nums[i-1]){
-                rob = rob + nums[i];
-            }else {
-                rob = rob + nums[i-1];
-            }
-
-            i = i+2;
+           if( (i%2) == 0){
+               evenBlockRob = evenBlockRob + nums[i];
+           }else{
+               oddBlockRob = oddBlockRob + nums[i];
+           }
+           i++;
         }
-
-        return rob;
+        return Math.max(evenBlockRob, oddBlockRob);
     }
 
     public static void main(String[] args) {
-        int[] nums = {2,7,9,3,1};
+        int[] nums = {2,1,1,2};
         int res = rob(nums);
         System.out.println(res);
     }
