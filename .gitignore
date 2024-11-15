@@ -5,3 +5,6 @@
 
 .Java/.idea/
 .Java/.out/
+
+.Python/.venv/
+.Python/.out/
