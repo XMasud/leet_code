@@ -15,8 +15,6 @@ public class MinimumAbsoluteDifference1200 {
             diff = Math.min(Math.abs(arr[i] - arr[i-1]), diff);
         }
 
-        System.out.println(diff);
-
         int i = 0;
         while (i <= arr.length - 2){
             List<Integer> value = new ArrayList<>();
