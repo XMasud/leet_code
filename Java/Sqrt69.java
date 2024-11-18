@@ -2,7 +2,7 @@ public class Sqrt69 {
 
     public static int mySqrt(int x) {
 
-        return (int) Math.floor(Math.sqrt((double) x));
+        return (int) Math.floor(Math.sqrt(x));
     }
 
     public static void main(String[] args) {
