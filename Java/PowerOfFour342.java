@@ -17,5 +17,6 @@ public class PowerOfFour342 {
     public static void main(String[] args) {
         int num = 27;
         boolean result = isPowerOfFour(num);
+        System.out.println(result);
     }
 }
