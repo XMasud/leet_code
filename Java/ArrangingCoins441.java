@@ -1,21 +1,23 @@
 public class ArrangingCoins441 {
     public static int arrangeCoins(int n) {
 
-        long count = 0;
-        int index = 0;
-        long sum = 0;
-        while(n >= sum ){
+        long left = 1, right = (long) n;
 
-            count++;
-            sum = sum + count;
-            if(sum <= n){
-                index++;
+        while (left <= right){
+            long mid = left + (right - left) / 2;
+            if((mid * (mid+1) / 2) == n){
+                return (int) mid;
+            } else if ((mid * (mid+1) / 2) > n) {
+                right = mid - 1;
+            } else if ((mid * (mid+1) / 2) < n) {
+                left = mid + 1;
             }
         }
-        return index;
+
+        return (int) left - 1;
     }
     public static void main(String[] args) {
-        int num = 8;
+        int num = 5;
         int result = arrangeCoins(num);
         System.out.println(result);
     }
