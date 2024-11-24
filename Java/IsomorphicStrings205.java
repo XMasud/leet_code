@@ -12,36 +12,26 @@ public class IsomorphicStrings205 {
 
     private static boolean isIsomorphic(String s, String t) {
 
-        if(s.length() != t.length()) return false;
+        if (s.length() != t.length()) return false;
 
         HashMap<Character, Character> result = new HashMap<>();
 
         for (int i = 0; i < s.length(); i++) {
-            char sString = s.charAt(i);
-            char tString = t.charAt(i);
+            char original = s.charAt(i);
+            char replacement = t.charAt(i);
 
-            if(result.containsKey(sString)){
-                if(!result.get(sString).equals(tString)){
+            if (result.containsKey(original)) {
+                if (!result.get(original).equals(replacement)) {
                     return false;
                 }
-            }else {
-                if(result.containsValue(tString)){
+            } else {
+                if (!result.containsKey(original) && !result.containsValue(replacement)) {
+                    result.put(original, replacement);
+                } else
                     return false;
-                }
-                result.put(sString, tString);
             }
         }
 
-        String newStr = "";
-        for (int i = 0; i < s.length(); i++) {
-            char sChar = s.charAt(i);
-            if(result.containsKey(sChar)){
-                newStr += result.get(sChar);
-            }
-        }
-
-        System.out.println(newStr);
-
-        return t.equals(newStr);
+        return true;
     }
 }
