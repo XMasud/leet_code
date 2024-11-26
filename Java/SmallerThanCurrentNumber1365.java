@@ -1,27 +1,37 @@
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+
 public class SmallerThanCurrentNumber1365 {
     public static void main(String[] args) {
         int[] nums = {8,1,2,2,3};
         int[] result = smallerNumbersThanCurrent(nums);
 
         for (Integer res: result){
-            System.out.println(res);
+          //  System.out.println(res);
         }
     }
+
     public static int[] smallerNumbersThanCurrent(int[] nums) {
 
-        int[] result = new int[nums.length];
+        int[] result = nums.clone();
 
         if (nums.length < 2)
             return result;
 
+        Arrays.sort(nums);
+        HashMap<Integer, Integer> record = new HashMap<>();
+
         for (int i = 0; i < nums.length; i++) {
-            int count = 0;
-            for (int j = 0; j < nums.length; j++) {
-                if(nums[i] > nums[j]){
-                    count++;
-                }
+            if(!record.containsKey(nums[i])){
+                record.put(nums[i],i );
             }
-            result[i] = count;
+        }
+
+        for (int i = 0; i < result.length; i++) {
+            if(record.containsKey(result[i])){
+                result[i] = record.get(result[i]);
+            }
         }
 
         return result;
