@@ -17,7 +17,6 @@ public class PeakElement162 {
                 right = mid;
             }
         }
-
         return left;
     }
 }
