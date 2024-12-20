@@ -35,7 +35,6 @@ public class MinimumPositiveSumSubarray3364 {
                 }
             }
         }
-
         return found ? minSum : -1;
     }
 }
