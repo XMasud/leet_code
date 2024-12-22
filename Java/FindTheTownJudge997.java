@@ -12,10 +12,6 @@ public class FindTheTownJudge997 {
             outRecord[arr[1]]++;
         }
 
-        for (int i = 1; i < n+1; i++) {
-            System.out.println(i+" -> "+inRecord[i]+ " - "+ outRecord[i]);
-        }
-
         for (int i = 1; i <= n ; i++) {
             if (inRecord[i] == 0 && outRecord[i] == n - 1){
                 return i;
