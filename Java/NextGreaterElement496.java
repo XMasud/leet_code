@@ -10,29 +10,29 @@ public class NextGreaterElement496 {
         }
     }
 
-    private static int[] nextGreaterElement(int[] num1, int[] num2) {
+    private static int[] nextGreaterElement(int[] nums1, int[] nums2) {
 
-        int[] result = new int[num1.length];
+        int[] result = new int[nums1.length];
         HashMap<Integer, Integer> record = new HashMap<>();
 
-        if(num1.length < 1 || num2.length < 1)
+        if(nums1.length < 1 || nums2.length < 1)
             return result;
 
-        for (int i = 0; i < num2.length; i++) {
-            record.put(num2[i], i);
+        for (int i = 0; i < nums2.length; i++) {
+            record.put(nums2[i], i);
         }
 
-        for (int i = 0; i < num1.length; i++) {
+        for (int i = 0; i < nums1.length; i++) {
 
-            int index = record.get(num1[i]);
+            int index = record.get(nums1[i]);
 
             if (index >= 0) {
 
                 index++;
                 boolean flag = false;
-                while (index < num2.length) {
-                    if (num2[index] > num1[i]) {
-                        result[i] = num2[index];
+                while (index < nums2.length) {
+                    if (nums2[index] > nums1[i]) {
+                        result[i] = nums2[index];
                         flag = true;
                         break;
                     }
