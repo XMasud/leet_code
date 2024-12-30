@@ -13,6 +13,7 @@ public class SetMismatch645 {
         if(nums.length < 2) return nums;
 
         int[] result = new int[2];
+
         int[] map = new int[nums.length+1];
         Arrays.fill(map,-1);
 
