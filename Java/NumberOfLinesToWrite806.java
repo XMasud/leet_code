@@ -1,5 +1,4 @@
 import java.util.Arrays;
-import java.util.HashMap;
 
 public class NumberOfLinesToWrite806 {
     public static void main(String[] args) {
@@ -10,9 +9,7 @@ public class NumberOfLinesToWrite806 {
 
     private static int[] numberOfLines(int[] widths, String s) {
 
-        int[] result = new int[2];
-
-        int line_count = 0;
+        int line_count = 1;
         int pixel_count = 0;
 
         for (char c : s.toCharArray()) {
@@ -26,15 +23,6 @@ public class NumberOfLinesToWrite806 {
             }
         }
 
-        if (pixel_count > 0) {
-            line_count++;
-        }
-
-        result[0] = line_count;
-        result[1] = pixel_count;
-
-        return result;
+        return new int[]{line_count, pixel_count};
     }
-
-
 }
