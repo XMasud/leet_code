@@ -60,9 +60,7 @@ class LinkedList {
             }else {
                 n = n.next;
             }
-
         }
-
     }
 
     public void print() {

@@ -29,7 +29,6 @@ public class MaxNumberKSumPairs1679 {
                 result.put(nums[i], result.getOrDefault(nums[i], 0) + 1);
             }
         }
-        System.out.println(count);
         return count;
     }
 }

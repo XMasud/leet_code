@@ -7,6 +7,7 @@ public class TimeConversion2224 {
     }
 
     private static int convertTime(String current, String correct) {
+
         String[] currentSplit = current.split(":");
         String[] correctSplit = correct.split(":");
 
@@ -30,7 +31,6 @@ public class TimeConversion2224 {
                 count++;
             }
         }
-
         return count;
     }
 }
