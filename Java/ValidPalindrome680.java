@@ -7,28 +7,27 @@ public class ValidPalindrome680 {
 
     private static boolean validPalindrome(String s) {
 
-        if(s.length() == 1)
+        if (s.length() == 1)
             return true;
 
-        if(checkPalindrome(s))
-            return true;
+        int left = 0;
+        int right = s.length() - 1;
 
-        for (int i = 0; i < s.length(); i++) {
+        while (left < right) {
 
-            String result = s.substring(0, i) + s.substring(i + 1);
-            if(checkPalindrome(result))
-                return true;
+            if (s.charAt(left) != s.charAt(right))
+                return checkPalindrome(s, left + 1, right) || checkPalindrome(s, left, right - 1);
+
+            left++;
+            right--;
         }
-        return false;
+        return true;
     }
 
-    private static boolean checkPalindrome(String s){
+    private static boolean checkPalindrome(String s, int start, int end) {
 
-        int start = 0;
-        int end = s.length() - 1;
-
-        while (start < end){
-            if(s.charAt(start) != s.charAt(end))
+        while (start < end) {
+            if (s.charAt(start) != s.charAt(end))
                 return false;
 
             start++;
