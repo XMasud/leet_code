@@ -1,4 +1,5 @@
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 
 public class EliminationGame390 {
     public static void main(String[] args) {
@@ -7,6 +8,8 @@ public class EliminationGame390 {
     }
 
     public static int lastRemaining(int n) {
+
+
 
         if (n == 1)
             return 1;
