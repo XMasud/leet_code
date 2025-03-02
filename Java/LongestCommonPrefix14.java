@@ -1,6 +1,6 @@
 public class LongestCommonPrefix14 {
     public static void main(String[] args) {
-        String[] strs = {"dog", "racecar", "car"};
+        String[] strs = {"dog", "d", "dear"};
         String result = longestCommonPrefix(strs);
         System.out.println(result);
     }
@@ -19,9 +19,6 @@ public class LongestCommonPrefix14 {
         for (int i = 1; i < strs.length; i++) {
 
             String currentWord = strs[i];
-
-            if (currentWord == null || currentWord.isEmpty())
-                return "";
 
             int minimum = 0;
 
