@@ -25,9 +25,9 @@ public class PositionsOfLargeGroups830 {
             char currentChar = s.charAt(i);
             if (currentChar == lastChar) {
                 end = i;
-                if(i+1 == s.length()){
+                if (i + 1 == s.length()) {
                     int diff = end - start;
-                    if(diff >= 2){
+                    if (diff >= 2) {
                         List<Integer> result = new ArrayList<>();
                         result.add(start);
                         result.add(end);
