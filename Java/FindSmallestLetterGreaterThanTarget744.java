@@ -11,21 +11,20 @@ public class FindSmallestLetterGreaterThanTarget744 {
         if(letters.length < 2)
             return letters[0];
 
-        int[] nums = new int[letters.length];
-        for (int i = 0; i < letters.length; i++) {
-            int charLetter = letters[i] - 'a';
-            nums[i] = charLetter;
-        }
+        int start = 0;
+        int end = letters.length - 1;
 
-        int targetConversion = target - 'a';
-
-        for (int i = 0; i < letters.length; i++) {
-            if(nums[i] > targetConversion){
-                return letters[i];
-            } else if (nums[i] == targetConversion) {
-                continue;
+        while (start <= end){
+            int mid  = start + (end - start) / 2;
+            if(letters[mid] <= target){
+                start = mid + 1;
+            }else {
+                end = mid - 1;
             }
         }
+        if(start < letters.length)
+            return letters[start];
+
         return letters[0];
     }
 }
