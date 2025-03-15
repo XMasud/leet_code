@@ -14,21 +14,17 @@ public class BaseballGame682 {
 
         for (int i = 0; i < operations.length; i++) {
 
-            if(isNumeric(operations[i])){
+            if (operations[i].equals("+")) {
+                int val = result.get(result.size() - 1) + result.get(result.size() - 2);
+                result.add(val);
+            } else if (operations[i].equals("D")) {
+                int val = 2 * result.get(result.size() - 1);
+                result.add(val);
+            } else if (operations[i].equals("C")) {
+                result.remove(result.size() - 1);
+            } else {
                 int n = Integer.parseInt(operations[i]);
                 result.add(n);
-            }else{
-                char c = operations[i].charAt(0);
-
-                if (c == '+') {
-                    int val = result.get(result.size() - 1) + result.get(result.size() - 2);
-                    result.add(val);
-                } else if (c == 'D') {
-                    int val = 2 * result.get(result.size() - 1);
-                    result.add(val);
-                } else if (c == 'C') {
-                    result.remove(result.size() - 1);
-                }
             }
         }
 
@@ -38,15 +34,5 @@ public class BaseballGame682 {
         }
 
         return sum;
-    }
-
-    public static boolean isNumeric(String str) {
-        if (str == null || str.isEmpty()) return false;
-        try {
-            Integer.parseInt(str);
-            return true;
-        } catch (NumberFormatException e) {
-            return false;
-        }
     }
 }
