@@ -4,27 +4,40 @@ public class CountAndSay38 {
         //System.out.println(result);
     }
     public static String countAndSay(int n) {
-        StringBuilder result = new StringBuilder();
 
-        for (int i = 1; i <= n; i++) {
-            if(i == 1){
-                result.append(1);
+        if(n < 1)
+            return "";
+
+        String result = "1";
+
+        for (int i = 1; i < n ; i++) {
+            result = countSayGenerator(result);
+        }
+        System.out.println(result);
+        return result;
+    }
+
+    public static String countSayGenerator(String result){
+
+        StringBuilder sb = new StringBuilder();
+
+        int count = 1;
+        char lastChar = result.charAt(0);
+
+        for (int i = 1; i < result.length(); i++) {
+            if(result.charAt(i) == lastChar){
+                count++;
             }else {
-
-                int temp = Integer.parseInt(result.toString());
-                int dividend = temp / 10;
-                int reminder = temp % 10;
-
-                result = new StringBuilder();
-                if(dividend > 0){
-                    result.append(reminder+dividend);
-                }else{
-                    result.append(10+reminder);
-                }
-                System.out.println(i+ " - "+ result.toString());
+                sb.append(count);
+                sb.append(lastChar);
+                lastChar = result.charAt(i);
+                count = 1;
             }
         }
 
-        return result.toString();
+        sb.append(count);
+        sb.append(lastChar);
+
+        return sb.toString();
     }
 }
