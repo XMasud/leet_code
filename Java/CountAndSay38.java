@@ -1,7 +1,6 @@
 public class CountAndSay38 {
     public static void main(String[] args) {
         String result = countAndSay(4);
-        //System.out.println(result);
     }
     public static String countAndSay(int n) {
 
@@ -13,7 +12,7 @@ public class CountAndSay38 {
         for (int i = 1; i < n ; i++) {
             result = countSayGenerator(result);
         }
-        System.out.println(result);
+
         return result;
     }
 
