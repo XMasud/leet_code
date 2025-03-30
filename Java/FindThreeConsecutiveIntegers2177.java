@@ -7,12 +7,6 @@ public class FindThreeConsecutiveIntegers2177 {
 
         long[] result = new long[3];
 
-        if(num == 0){
-            result[0] = -1;
-            result[2] = 1;
-            return result;
-        }
-
         if(num % 3 == 0){
             result[0] = (num / 3) - 1;
             result[1] = (num / 3);
