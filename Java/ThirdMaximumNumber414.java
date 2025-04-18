@@ -1,34 +1,28 @@
-import java.util.Arrays;
-import java.util.HashSet;
-
-import static java.util.Collections.list;
-
 public class ThirdMaximumNumber414 {
     public static int thirdMax(int[] nums) {
 
-        HashSet<Integer> list = new HashSet<>();
+        long max1 = Long.MIN_VALUE;
+        long max2 = Long.MIN_VALUE;
+        long max3 = Long.MIN_VALUE;
 
         for (int num : nums) {
-            list.add(num);
+            if (num > max1) {
+                max3 = max2;
+                max2 = max1;
+                max1 = num;
+            } else if (max1 > num && num > max2) {
+                max3 = max2;
+                max2 = num;
+            } else if (max2 > num && num > max3) {
+                max3 = num;
+            }
         }
 
-        int[] newArr = new int[list.size()];
-        int i = 0;
-
-        for (int num : list) {
-            newArr[i] = num;
-            i++;
-        }
-        Arrays.sort(nums);
-
-        if (newArr.length < 3)
-            return newArr[newArr.length - 1];
-
-        return newArr[newArr.length - 3];
+        return max3 == Long.MIN_VALUE ? (int) max1 : (int) max3;
     }
 
     public static void main(String[] args) {
-        int[] nums = {2, 2, 3, 1};
+        int[] nums = {1, 2};
         int result = thirdMax(nums);
         System.out.println(result);
     }
