@@ -6,20 +6,16 @@ public class CountAndSay38 {
 
         if(n < 1)
             return "";
-
         String result = "1";
-
         for (int i = 1; i < n ; i++) {
             result = countSayGenerator(result);
         }
-
         return result;
     }
 
     public static String countSayGenerator(String result){
 
         StringBuilder sb = new StringBuilder();
-
         int count = 1;
         char lastChar = result.charAt(0);
 
@@ -33,7 +29,6 @@ public class CountAndSay38 {
                 count = 1;
             }
         }
-
         sb.append(count);
         sb.append(lastChar);
 
