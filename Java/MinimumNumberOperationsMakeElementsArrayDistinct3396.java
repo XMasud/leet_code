@@ -6,13 +6,13 @@ public class MinimumNumberOperationsMakeElementsArrayDistinct3396 {
     }
 
     public static int minimumOperations(int[] nums) {
+
         int[] res = new int[101];
         int lastIndex = 0;
 
         for (int i = nums.length - 1; i >= 0; i--) {
 
             res[nums[i]]++;
-
             if (res[nums[i]] > 1) {
                 lastIndex = i + 1;
                 break;
