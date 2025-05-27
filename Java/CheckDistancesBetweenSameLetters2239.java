@@ -1,7 +1,6 @@
-import java.util.Arrays;
 import java.util.HashMap;
 
-public interface CheckDistancesBetweenSameLetters2239 {
+public class CheckDistancesBetweenSameLetters2239 {
     public static void main(String[] args) {
         String s = "rryzglzgyl";
         int[] distance = {1,9,22,36,3,20,2,42,47,5,35,3,11,37,14,37,44,0,15,9,19,44,16,32,5,2};
