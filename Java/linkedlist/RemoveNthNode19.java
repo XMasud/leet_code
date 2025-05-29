@@ -19,6 +19,7 @@ public class RemoveNthNode19 {
         }
         current.next = current.next.next;
 
+
         return head;
     }
 }

@@ -4,6 +4,7 @@ import java.util.Arrays;
 public class DivideStringIntoGroups2138 {
     public static void main(String[] args) {
         String[] result = divideString("abcdefghij",3, 'x');
+        System.out.println(Arrays.toString(result));
     }
     public static String[] divideString(String s, int k, char fill) {
 
@@ -23,7 +24,6 @@ public class DivideStringIntoGroups2138 {
             }
             result.add(newStr.toString());
         }
-
 
         return result.toArray(new String[0]);
     }
