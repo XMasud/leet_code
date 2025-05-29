@@ -17,9 +17,6 @@ public class DigitGameCanBeWon3232 {
                 doubleDigitSum += num;
         }
 
-        if(singleDigitSum == doubleDigitSum)
-            return false;
-
-        return true;
+        return singleDigitSum != doubleDigitSum;
     }
 }

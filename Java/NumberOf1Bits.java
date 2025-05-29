@@ -14,6 +14,6 @@ public class NumberOf1Bits {
                 count++;
         }
 
-        return count;
+        return Integer.bitCount(n);
     }
 }
