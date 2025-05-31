@@ -3,6 +3,7 @@ package linkedlist;
 import java.util.HashSet;
 
 public class DeleteNodesFromLinkedListArray3217 {
+
     public ListNode modifiedList(int[] nums, ListNode head) {
 
         HashSet<Integer> result = new HashSet<>();
@@ -22,7 +23,6 @@ public class DeleteNodesFromLinkedListArray3217 {
                 current = current.next;
             }
         }
-
         return dummyNode.next;
     }
 }
