@@ -131,15 +131,49 @@ public class DesignLinkedList {
         return pre;
     }
 
+    public static ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+
+        ListNode dummy = new ListNode(Integer.MIN_VALUE);
+        ListNode head = dummy;
+
+        while (list1 != null && list2 != null){
+
+            if(list1.val <= list2.val){
+                dummy.next = list1;
+                list1 = list1.next;
+            }else {
+                dummy.next = list2;
+                list2 = list2.next;
+            }
+            dummy = dummy.next;
+        }
+
+        if(list1 == null){
+            dummy.next = list2;
+        } else if (list2 == null) {
+            dummy.next = list1;
+        }
+
+        return head.next;
+    }
+
     public static void main(String[] args) {
 
-        ListNode head = arrayToList(new int[]{5, 2, 13, 3, 8});
-        System.out.print("Original list: ");
-        printList(head);
+        ListNode head1 = arrayToList(new int[]{1,3,6,10});
+        System.out.print("First list: ");
+        printList(head1);
 
-        head = removeNodes(head);
-        System.out.print("Removed list: ");
-        printList(head);
+        ListNode head2 = arrayToList(new int[]{4,7,9});
+        System.out.print("Second list: ");
+        printList(head2);
+
+        head2 = mergeTwoLists(head1,head2);
+        System.out.print("Merged list: ");
+        printList(head2);
+
+        //head = removeNodes(head);
+        //System.out.print("Removed list: ");
+        //printList(head);
 
     }
 }
