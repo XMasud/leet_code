@@ -157,19 +157,39 @@ public class DesignLinkedList {
         return head.next;
     }
 
+    public static ListNode reverseBetween(ListNode head, int left, int right) {
+
+        ListNode current = head;
+        ListNode previous = null;
+
+        while (current != null){
+
+            if(current.val >= left && current.val <= right){
+                ListNode next = current.next;
+                current = next;
+            }
+
+            current = current.next;
+        }
+        return current;
+    }
+
+
+
     public static void main(String[] args) {
 
-        ListNode head1 = arrayToList(new int[]{1,3,6,10});
-        System.out.print("First list: ");
+        ListNode head1 = arrayToList(new int[]{1,2,2,1});
+        System.out.print("Original list: ");
         printList(head1);
 
-        ListNode head2 = arrayToList(new int[]{4,7,9});
+        /*ListNode head2 = arrayToList(new int[]{4,7,9});
         System.out.print("Second list: ");
-        printList(head2);
+        printList(head2);*/
 
-        head2 = mergeTwoLists(head1,head2);
-        System.out.print("Merged list: ");
-        printList(head2);
+
+        head1 = reverseBetween(head1,2,4);
+        System.out.print("Modified list: ");
+        printList(head1);
 
         //head = removeNodes(head);
         //System.out.print("Removed list: ");
