@@ -168,7 +168,6 @@ public class DesignLinkedList {
                 ListNode next = current.next;
                 current = next;
             }
-            System.out.println(current.val);
 
             current = current.next;
         }
@@ -188,9 +187,9 @@ public class DesignLinkedList {
         printList(head2);*/
 
 
-        //head1 = isPalindrome(head1);
-        //System.out.print(isPalindrome(head1));
-        //printList(head1);
+        head1 = reverseBetween(head1,2,4);
+        System.out.print("Modified list: ");
+        printList(head1);
 
         //head = removeNodes(head);
         //System.out.print("Removed list: ");
