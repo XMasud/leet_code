@@ -1,6 +1,6 @@
 package linkedlist;
 
-import java.util.Stack;
+import java.util.*;
 
 public class DesignLinkedList {
 
@@ -174,11 +174,9 @@ public class DesignLinkedList {
         return current;
     }
 
-
-
     public static void main(String[] args) {
 
-        ListNode head1 = arrayToList(new int[]{1,2,2,1});
+        ListNode head1 = arrayToList(new int[]{4,2,1,3});
         System.out.print("Original list: ");
         printList(head1);
 
@@ -187,9 +185,9 @@ public class DesignLinkedList {
         printList(head2);*/
 
 
-        head1 = reverseBetween(head1,2,4);
-        System.out.print("Modified list: ");
-        printList(head1);
+        //head1 = sortList(head1);
+        //System.out.print("Modified list: ");
+        //printList(head1);
 
         //head = removeNodes(head);
         //System.out.print("Removed list: ");

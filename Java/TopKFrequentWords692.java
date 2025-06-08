@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class TopKFrequentWords692 {
     public static void main(String[] args) {
@@ -18,6 +19,7 @@ public class TopKFrequentWords692 {
         }
 
         List<String> sortedList = new ArrayList<>(map.keySet());
+
         sortedList.sort((a,b) -> {
             int freqCompare = map.get(b).compareTo(map.get(a));
             if(freqCompare == 0)

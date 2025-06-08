@@ -1,22 +1,30 @@
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Test {
 
     public static void main(String[] args) {
 
-        int[] nums = {1, 2, 3, 1, 2, 0};
-        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+        HashMap<String, Integer> map = new HashMap<>();
+        map.put("John", 30);
+        map.put("Alice", 25);
+        map.put("Bob", 35);
+        map.put("Diana", 20);
 
-        for(int i=0; i< nums.length; i++){
+        /*List<Map.Entry<String, Integer>> sortedList = new ArrayList<>(map.entrySet());
+        sortedList.sort(Map.Entry.comparingByValue());*/
 
-            if(map.containsKey(nums[i]) && (i-map.get(nums[i]))<2){
-
-            }else{
-                map.put(nums[i], i);
+        List<String> sortedList = new ArrayList<>(map.keySet());
+        sortedList.sort((a,b) ->{
+            int freqCompare = map.get(b).compareTo(map.get(a));
+            if(freqCompare == 0){
+                return a.compareTo(b);
             }
+            return freqCompare;
+        });
 
-        }
-
-        System.out.println(0+5/2);
+        System.out.println(sortedList);
     }
 }
