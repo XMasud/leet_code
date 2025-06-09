@@ -13,9 +13,6 @@ public class Test {
         map.put("Bob", 35);
         map.put("Diana", 20);
 
-        /*List<Map.Entry<String, Integer>> sortedList = new ArrayList<>(map.entrySet());
-        sortedList.sort(Map.Entry.comparingByValue());*/
-
         List<String> sortedList = new ArrayList<>(map.keySet());
         sortedList.sort((a,b) ->{
             int freqCompare = map.get(b).compareTo(map.get(a));
