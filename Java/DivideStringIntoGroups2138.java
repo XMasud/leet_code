@@ -3,26 +3,26 @@ import java.util.Arrays;
 
 public class DivideStringIntoGroups2138 {
     public static void main(String[] args) {
-        String[] result = divideString("abcdefghij",3, 'x');
+        String[] result = divideString("abcdefgi",3, 'x');
         System.out.println(Arrays.toString(result));
     }
     public static String[] divideString(String s, int k, char fill) {
 
         ArrayList<String> result = new ArrayList<>();
-        int n = (s.length() - 1)/ k;
 
-        for (int i = 0; i < n; i++) {
-            StringBuilder newStr = new StringBuilder();
-            int j = 0;
-            if(s.length() - i >= k-1){
-                while (j < k){
-                    newStr.append(s.charAt(i+j));
-                    j++;
-                }
-            }else{
-                int diff = s.length() - i;
-            }
-            result.add(newStr.toString());
+        int index = 0;
+
+        while (index < s.length()){
+
+            int end = Math.min(index+k, s.length());
+            StringBuilder str = new StringBuilder(s.substring(index,end));
+
+            while(str.length() < k)
+                str.append(fill);
+
+            result.add(str.toString());
+
+            index += k;
         }
 
         return result.toArray(new String[0]);
