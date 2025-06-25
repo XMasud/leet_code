@@ -9,7 +9,6 @@ public class DivideStringIntoGroups2138 {
     public static String[] divideString(String s, int k, char fill) {
 
         ArrayList<String> result = new ArrayList<>();
-
         int index = 0;
 
         while (index < s.length()){
@@ -21,10 +20,8 @@ public class DivideStringIntoGroups2138 {
                 str.append(fill);
 
             result.add(str.toString());
-
             index += k;
         }
-
         return result.toArray(new String[0]);
     }
 }
