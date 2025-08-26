@@ -1,11 +1,9 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class WordBreak139 {
     public static void main(String[] args) {
-        String s = "abcd";
-        List<String> wordDict = new ArrayList<>(Arrays.asList("a","abc","b","cd"));
+        String s = "leetcode";
+        List<String> wordDict = new ArrayList<>(Arrays.asList("leet","code"));
 
         boolean result = wordBreak(s, wordDict);
         System.out.println(result);
@@ -13,28 +11,20 @@ public class WordBreak139 {
 
     public static boolean wordBreak(String s, List<String> wordDict) {
 
-        int start = 0;
+        Set<String> dict = new HashSet<>(wordDict);
+        boolean[] dp = new boolean[s.length() + 1];
+        dp[0] = true;
 
-        while (start < s.length()) {
-            boolean status = false;
-            for (String word : wordDict) {
-                if(start + word.length() > s.length()){
+        for (int i = 1; i <= s.length(); i++) {
+            for (int j = 0; j < i; j++) {
+                String newS = s.substring(j,i);
+                if(dp[j] && dict.contains(newS)){
+                    dp[i] = true;
                     break;
                 }
-                String newS = s.substring(start, start + word.length());
-                if (newS.equals(word)) {
-                    start = start + word.length();
-                    status = true;
-                    //break;
-                }
             }
-
-            if (!status){
-                return false;
-            }
-
         }
 
-        return true;
+        return dp[s.length()];
     }
 }
