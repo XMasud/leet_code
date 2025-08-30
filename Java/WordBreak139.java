@@ -10,7 +10,6 @@ public class WordBreak139 {
     }
 
     public static boolean wordBreak(String s, List<String> wordDict) {
-
         Set<String> dict = new HashSet<>(wordDict);
         boolean[] dp = new boolean[s.length() + 1];
         dp[0] = true;
@@ -24,7 +23,6 @@ public class WordBreak139 {
                 }
             }
         }
-
         return dp[s.length()];
     }
 }
