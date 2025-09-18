@@ -18,21 +18,18 @@ public class IntervalsBetweenIdenticalElements2121 {
         }
 
         for (int i = 0; i < arr.length; i++) {
-            result[i] = findInterval(i,map);
+           // result[i] = findInterval(i,map);
         }
-
         return result;
     }
 
     public static int findInterval(int key, HashMap<Integer,Integer> map){
         int sum = 0;
-
         for(Map.Entry<Integer,Integer> entry: map.entrySet()){
             if(entry.getValue().equals(map.get(key))){
                 sum = sum + Math.abs(key - entry.getKey());
             }
         }
-
         return sum;
     }
 }
