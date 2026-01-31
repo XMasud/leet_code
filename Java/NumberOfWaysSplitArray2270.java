@@ -9,9 +9,9 @@ public class NumberOfWaysSplitArray2270 {
 
     private static int waysToSplitArray(int[] nums) {
         int result = 0;
-        int left = 0;
+        long left = 0;
 
-        int sum = Arrays.stream(nums).sum();
+        long sum = Arrays.stream(nums).sum();
 
         for(int i=0; i < nums.length - 1; i++){
             left = left + nums[i];
