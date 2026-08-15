@@ -5,39 +5,30 @@ import java.util.List;
 
 public class MergeIntervals56 {
     public static void main(String[] args) {
-        int[][] intervals = {{1,2},{4,6}};
+        int[][] intervals = {{1,3},{2,6},{8,10},{15,18}};
         int[][] result = merge(intervals);
-
     }
     public static int[][] merge(int[][] intervals) {
+
+        if (intervals.length <= 1)
+                return intervals;
 
         List<int[]> result = new ArrayList<>();
         Arrays.sort(intervals, Comparator.comparingInt(a -> a[0]));
 
+        int[] newInterval = intervals[0];
+        result.add(newInterval);
 
-        int previousStart = intervals[0][0];
-        int previousEnd = intervals[0][1];
 
-        for (int i = 1; i < intervals.length; i++) {
+        for (int[] interval: intervals){
 
-            int newStart = 0;
-            int newEnd = 0;
-
-            int currentStart = intervals[i][0];
-            int currentEnd = intervals[i][1];
-
-            if(currentStart < previousEnd){
-                newStart = previousStart;
-            }else{
-                newStart = currentStart;
+            if(interval[0] < newInterval[1]){
+                newInterval[1] = Math.max(newInterval[1], interval[1]);
+            }else {
+                newInterval = interval;
+                result.add(interval);
             }
-
-            newEnd = Math.max(currentEnd, previousEnd);
-
-            result.add(new int[]{newStart, newEnd});
         }
-
-        System.out.println(Arrays.deepToString(result.toArray(new int[0][])));
 
         return result.toArray(new int[result.size()][]);
     }
